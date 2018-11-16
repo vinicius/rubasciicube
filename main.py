@@ -7,10 +7,10 @@ newCube = Cube()
 letsplay = "You gotta a new cube! Let's play..."
 print(letsplay)
 while True:
-    face = raw_input("Choose face (f,b,l,r,u,b) or m to menu: ")
-    if face == 'm':
+    comms = raw_input("Type move sequence ('r','l','u','d','f','b' for faces + 'i' for counter-clockwise) or m to menu: ")
+    if comms == 'm':
         print
-        m = raw_input("Menu: p to print, r to resets, s to sequence, q to quit: ")
+        m = raw_input("Menu: s_huffle, p_rint, r_eset, l_oop, q_uit: ")
         if m == 'p':
             newCube.printCube()
             continue
@@ -19,22 +19,26 @@ while True:
             print
             print(letsplay)
             continue
-        if m == 's':
+        if m == 'l':
             count = 0
-            seq = raw_input("Type sequence:" )
-            cmds = seq.split(",")
+            seq = raw_input("Type loop sequence:" )
+            cmds = seq.split(" ")
+            print 'Performing loop sequence...'
             while not newCube.isDone() or count == 0:
-                newCube.rotate(cmds[0], cmds[1])
-                count = count + 1
-                newCube.rotate(cmds[2], cmds[3])
-                count = count + 1
+                for cmd in cmds:
+                    newCube.rotate(cmd)
+                    count = count + 1
             if newCube.isDone():
-                print 'Cube was done in ' + str(count) + ' movements'
+                print 'Rubascii Cube was done in ' + str(count) + ' movements'
+                print
                 break
+        if m == 's':
+            newCube.shuffle()
         if m == 'q':
             break
-    direction = raw_input("Clockwise (y or n): ")
-    newCube.rotate(face, direction)
+    #direction = raw_input("Clockwise (y or n): ")
+    newCube.rotate(comms)
     newCube.printCube()
     if newCube.isDone():
-        print 'is done!'
+        print 'Congratulations! The Rubascii Cube is done!'
+        print
