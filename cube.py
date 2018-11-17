@@ -5,12 +5,6 @@ from termcolor import colored
 class Cube:
     # The faces must be read in the sense: left-rigth, up-down
     def __init__(self):
-        #self.front = np.array([['W', 'W', 'W'], ['W', 'W', 'W'], ['W', 'W', 'W']])
-        #self.back = np.array([['Y', 'Y', 'Y'], ['Y', 'Y', 'Y'], ['Y', 'Y', 'Y']])
-        #self.left = np.array([['O', 'O', 'O'], ['O', 'O', 'O'], ['O', 'O', 'O']])
-        #self.right = np.array([['R', 'R', 'R'], ['R', 'R', 'R'], ['R', 'R', 'R']])
-        #self.upper = np.array([['B', 'B', 'B'], ['B', 'B', 'B'], ['B', 'B', 'B']])
-        #self.botton = np.array([['G', 'G', 'G'], ['G', 'G', 'G'], ['G', 'G', 'G']])
         self.W = colored(' W ', 'white', 'on_white')
         self.Y = colored(' Y ', 'yellow', 'on_yellow')
         self.O = colored(' O ', 'magenta', 'on_magenta')
