@@ -83,28 +83,28 @@ class Cube:
     
     def isDone(self):
         done = True
-        for i in xrange(0, 2):
-            for j in xrange(0, 2):
+        for i in xrange(0, 3):
+            for j in xrange(0, 3):
                 if self.front[i, j] != self.W:
                     done = False
-        for i in xrange(0, 2):
-            for j in xrange(0, 2):
+        for i in xrange(0, 3):
+            for j in xrange(0, 3):
                 if self.back[i, j] != self.Y:
                     done = False
-        for i in xrange(0, 2):
-            for j in xrange(0, 2):
+        for i in xrange(0, 3):
+            for j in xrange(0, 3):
                 if self.left[i, j] != self.O:
                     done = False
-        for i in xrange(0, 2):
-            for j in xrange(0, 2):
+        for i in xrange(0, 3):
+            for j in xrange(0, 3):
                 if self.right[i, j] != self.R:
                     done = False
-        for i in xrange(0, 2):
-            for j in xrange(0, 2):
+        for i in xrange(0, 3):
+            for j in xrange(0, 3):
                 if self.upper[i, j] != self.B:
                     done = False
-        for i in xrange(0, 2):
-            for j in xrange(0, 2):
+        for i in xrange(0, 3):
+            for j in xrange(0, 3):
                 if self.botton[i, j] != self.G:
                     done = False
         return done
