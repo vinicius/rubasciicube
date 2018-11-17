@@ -7,16 +7,30 @@ newCube = Cube()
 letsplay = "You gotta a new cube! Let's play..."
 print(letsplay)
 while True:
-    comms = raw_input("Type move sequence ('r','l','u','d','f','b' for faces + 'i' for counter-clockwise) or m to menu: ")
+    comms = raw_input("Type move sequence (m for menu):")
     if comms == 'm':
         print
-        m = raw_input("Menu: s_huffle, p_rint, r_eset, l_oop, q_uit: ")
+        m = raw_input("Menu: c_ontrols, s_huffle, p_rint, r_eset, l_oop, q_uit: ")
+        if m == 'c':
+            print
+            print("-- Controls ----------------------------------------------------------------------")
+            print("Choose 'r','l','u','d','f','b' for face")
+            print("Faces: r=right, l=left, u=upper, d=down, f=front, b=back")
+            print
+            print("By default the face is rotated clockwise direction. Add 'i' for counter-clockwise")
+            print
+            print("Example: f li b d ui representes the following move sequence")
+            print("   front, left counter-clockwise, back, down, upper counter-clockwise")
+            print("----------------------------------------------------------------------------------")
+            print
+            continue
         if m == 'p':
             newCube.printCube()
             continue
         if m == 'r':
             newCube = Cube()
             print
+            newCube.printCube() 
             print(letsplay)
             continue
         if m == 'l':
@@ -27,6 +41,7 @@ while True:
             while not newCube.isDone() or count == 0:
                 for cmd in cmds:
                     newCube.rotate(cmd)
+                    newCube.printCube()
                     count = count + 1
             if newCube.isDone():
                 print 'Rubascii Cube was done in ' + str(count) + ' movements'
