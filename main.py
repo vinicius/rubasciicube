@@ -1,6 +1,6 @@
 from cube import Cube
 
-print("### RUBASCII CUBE v0.1 ###")
+print("### RUBASCII CUBE v1.0 ###")
 print("Press any key to start...")
 raw_input()
 newCube = Cube()
