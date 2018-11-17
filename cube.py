@@ -54,6 +54,7 @@ class Cube:
         b = self.back
         print
         print("Actual position:")
+        print
         print("            |"+u[0][0]+"|"+u[0][1]+"|"+u[0][2]+"|")
         print
         print("            |"+u[1][0]+"|"+u[1][1]+"|"+u[1][2]+"|")
