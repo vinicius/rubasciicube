@@ -10,7 +10,7 @@ while True:
     comms = raw_input("Type move sequence (m for menu):")
     if comms == 'm':
         print
-        m = raw_input("Menu: c_ontrols, s_huffle, p_rint, r_eset, l_oop, q_uit: ")
+        m = raw_input("Menu: c_ontrols, s_huffle, rando_m, p_rint, r_eset, l_oop, q_uit: ")
         if m == 'c':
             print
             print("-- Controls ----------------------------------------------------------------------")
@@ -49,6 +49,9 @@ while True:
                 break
         if m == 's':
             newCube.shuffle()
+        if m == 'm':
+            newCube.randomPlay()
+            break
         if m == 'q':
             break
     #direction = raw_input("Clockwise (y or n): ")

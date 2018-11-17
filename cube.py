@@ -74,6 +74,16 @@ class Cube:
         print("            |"+b[0][2]+"|"+b[0][1]+"|"+b[0][0]+"|")
         print
  
+    def randomPlay(self):
+        moves = ['r','l','u','d','f','b','ri','li','ui','di','fi','bi']
+        count = 0
+        while not self.isDone() or count == 0:
+            moveidx = random.randint(0, len(moves) - 1)
+            self.rotate(moves[moveidx])
+            self.printCube()
+            count = count + 1
+        print("Rubascii cube was done in " + str(count) + " random moves!")
+
 
     def shuffle(self):
         moves = ['r','l','u','d','f','b','ri','li','ui','di','fi','bi']
@@ -110,7 +120,7 @@ class Cube:
         return done
 
     def rotate(self, comms):
-        comms = comms.split(" ")
+        comms = comms.strip().split(" ")
         for comm in comms:
             face = comm[0]
             clockwise = 'y'
